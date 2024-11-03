@@ -1,0 +1,156 @@
+html {
+  font-family: "Open Sans", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  font-size: 2.5em;
+}
+p {
+  line-height: 1.5em;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 200ms;
+}
+a:hover {
+  opacity: 0.5;
+}
+.brand {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.grid {
+  color: #fff;
+  padding: 1em;
+  min-height: 100vh;
+}
+.grid > div {
+  border-radius: 1em;
+}
+.main-panel {
+  background-image: url(./pic-2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.side-panel {
+  background-color: #443833;
+}
+.side-panel:last-child {
+  background-image: url(./pic-1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.inner-panel {
+  background-color: #000;
+  border-radius: 1em;
+  position: relative;
+}
+.title {
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5em;
+}
+.inner-panel,
+.side-panel {
+  padding: 1.5em;
+}
+.inner-panel,
+.side-panel:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 2em;
+}
+nav {
+  padding: 1.5em;
+}
+.links {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5em;
+}
+.btn {
+  padding: 0.5em 1em;
+  border: 2px #fff solid;
+  border-radius: 10px;
+  font-size: 1.1em;
+}
+@media screen and (max-width: 900px) {
+  .grid {
+    padding: 1em 1em 0 1em;
+  }
+  .grid > div {
+    min-height: 10em;
+    margin-bottom: 1em;
+  }
+  nav {
+    background-color: #98734d;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+  }
+  .links {
+    flex-direction: column;
+    margin: 4em 0 2em 0;
+  }
+  .inner-panel {
+    border-radius: 0;
+  }
+}
+@media screen and (min-width: 900px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em;
+  }
+  .main-panel {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em;
+  }
+  nav {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+    display: flex;
+    justify-content: space-between;
+  }
+  .title {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+  }
+  .inner-panel {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+    box-shadow: 0 0 0 1em #fff;
+  }
+  .inner-panel::before,
+  .inner-panel::after {
+    content: "";
+    position: absolute;
+    width: 1.8em;
+    height: 1.8em;
+    background-color: transparent;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .inner-panel::before {
+    left: -2.8em;
+    bottom: 0em;
+    box-shadow: 10px 10px 0 #fff;
+  }
+  .inner-panel::after {
+    top: -2.8em;
+    right: 0em;
+    box-shadow: 10px 10px 0 #fff;
+  }
+}
